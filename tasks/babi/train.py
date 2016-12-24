@@ -63,7 +63,7 @@ if __name__ == '__main__':
     sequence_max_length = 100
     word_space_size = len(lexicon_dict)
     words_count = 256
-    word_size = 32
+    word_size = 64
     read_heads = 4
 
     learning_rate = 1e-4
@@ -144,7 +144,7 @@ if __name__ == '__main__':
             avg_100_time = 0.
             avg_counter = 0
 
-            for i in xrange(start, end):
+            for i in xrange(start, end + 1):
                 try:
                     llprint("\rIteration %d/%d" % (i, end))
 
