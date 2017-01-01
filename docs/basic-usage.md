@@ -15,9 +15,9 @@ The implementation is structured into three main modules.
 
 - **Memeory** `dnc/memeory.py` ：このモジュールは、DNCアーキテクチャで使用されるメモリアクセスと注意の仕組みを実装します。これは、基本ユーザーが直接作業する必要がある内部モジュールと見なされます。
 - **Memeory** `dnc/memeory.py`: this module implements the memory access and attention mechanisms used in the DNC architecture. This is considered an internal module which a basic user would need to work directly with.
-- **BaseController* `dnc/controller.py`：このモジュールは、DNCアーキテクチャのコントローラユニットを表す抽象クラスを定義します。このクラスは、さまざまなタスク間のすべての一般的な操作（インタフェースベクトルの解析、入力と読み取りベクトルの連結など）を抽象化し、内部ニューラルネットワークの定義に関係する2つの実装されていないメソッドのみをユーザに残します。
+- **BaseController** `dnc/controller.py`：このモジュールは、DNCアーキテクチャのコントローラユニットを表す抽象クラスを定義します。このクラスは、さまざまなタスク間のすべての一般的な操作（インタフェースベクトルの解析、入力と読み取りベクトルの連結など）を抽象化し、内部ニューラルネットワークの定義に関係する2つの実装されていないメソッドのみをユーザに残します。
 - **BaseController** `dnc/controller.py`: this module defines an **abstract class** that represents the controller unit in the DNC architecture. The class abstracts away all the common operations between various task (like interface vector parsing, input and read vector concatenation, ... etc) and only leaves for the user two un-implemented methods that concern with defining the internal neural network.
--**DNC** dnc / dnc.py：このモジュールは、コントローラユニットとメモリの操作を統合しており、ユーザが直接対話するパブリックAPIとみなされます。また、このモジュールは、メモリの初期化、タイムステップのループ、メモリコントローラ通信などを含むさまざまなタスクに共通するすべての一般的な操作を抽象化しているため、ユーザーは必要なものだけを使用してそのクラスのインスタンスを構築する必要がありますモデルにデータを供給し、モデルから出力を得るために単純なAPIを使用します。
+- **DNC** dnc / dnc.py：このモジュールは、コントローラユニットとメモリの操作を統合しており、ユーザが直接対話するパブリックAPIとみなされます。また、このモジュールは、メモリの初期化、タイムステップのループ、メモリコントローラ通信などを含むさまざまなタスクに共通するすべての一般的な操作を抽象化しているため、ユーザーは必要なものだけを使用してそのクラスのインスタンスを構築する必要がありますモデルにデータを供給し、モデルから出力を得るために単純なAPIを使用します。
 - **DNC** `dnc/dnc.py`: this module integrates the operations of the controller unit and the memory, and it's considered the public API that the user should interact directly with. This module also abstracts away all the common operations across various tasks (like initiating the memory, looping through the time steps, memory-controller communications, ... etc) so the user is only required to construct an instance of that class using the desired parameters, and use simple API to feed data into the model and get outputs out of it.
 
 
